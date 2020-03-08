@@ -35,7 +35,8 @@ def v1():
             raise HTTP(400)
         retDict = dict()
         for key, value in fields.items():
-            retDict.update({key : urllib.unquote(value)})
+            # retDict.update({key : urllib.unquote(value)})
+            retDict.update({key : value})
         return db.entries.validate_and_insert(**retDict)
 
     # def PUT(*args, **vars):
@@ -46,20 +47,17 @@ def v1():
 
     return locals()
 
-
-
 def testAPIPost():
     r = requests.post(URL('api','v1',scheme=True, host=True, args=['entries']),
-             data = {'name':'Deschuttes Brewery',
-                 'place':'Bend, OR',
-                 'thing': 'brewery',
-                 'description':'some good burgers.  Red Chair beer my favorite'
+             data = {'name':u'Deschuttes Brewery',
+                 'place':u'Bend, OR',
+                 'thing': u'brewery',
+                 'description':u'some good burgers.  Red Chair beer my favorite',
+                 'userid': 1
              })
     return dict(result=r)
 
-
 def testAPIGet():
     response.view = 'generic.json'
-    r = requests.get(URL('api','v1',scheme=True, host=True, args=['entries','1.json'], auth=('admin@example.com', 'password')))
-    return dict(status_code =  r.status_code, headers = r.headers, content = r.content)
-
+    r = requests.get(URL('api','v1',scheme=True, host=True, args=['entries','2.json']))
+    return r.text

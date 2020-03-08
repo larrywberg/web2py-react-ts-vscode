@@ -23,6 +23,17 @@ def readme():
   return dict(data=markdown2.markdown(data))    
   
 
+# Sample view that uses react
+def reactExample():
+    response.view='default/reactPage.html'
+    props = {
+        "first_name": auth.user.first_name, 
+        "last_name": auth.user.last_name,
+        "email": auth.user.email,
+        "entries": __getEntries()
+    }
+    return dict(props=props, reactBundle="bundle.js")
+    
 # Builds an array of entries to pass to props
 def __getEntries():
     rows = db(db.entries.id > 0).select()
@@ -35,17 +46,6 @@ def __getEntries():
             "description":row.description
         })
     return dict(entries=entries)
-
-# Sample view that uses react
-def reactExample():
-    response.view='default/reactPage.html'
-    props = {
-        "first_name": auth.user.first_name, 
-        "last_name": auth.user.last_name,
-        "email": auth.user.email,
-        "entries": __getEntries()
-    }
-    return dict(props=props, reactBundle="bundle.js")
 
 def gridExample():
     query = db.entries.userid == auth.user_id
