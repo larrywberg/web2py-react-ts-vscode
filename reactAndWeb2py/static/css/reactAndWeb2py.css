@@ -42,3 +42,15 @@
     padding-left:80px;
     padding-right:80px;
 }
+
+.readmeDiv p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.readmeDiv code {
+    background-color: #eeeeee;
+    padding: 20px;
+    border-radius: 5px;
+}

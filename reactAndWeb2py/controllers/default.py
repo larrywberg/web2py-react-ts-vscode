@@ -1,5 +1,6 @@
 import requests
 import urllib
+from gluon.contrib.markdown import markdown2
 
 # -*- coding: utf-8 -*-
 # -------------------------------------------------------------------------
@@ -17,10 +18,10 @@ def index():
 
 def readme():
   from os.path import join as pathjoin
-  from gluon.contrib.markdown import WIKI as MARKDOWN
   with open(pathjoin(request.folder,'private', 'README.md')) as f:
     data = f.read()
-  return dict(data=MARKDOWN(data))    
+  return dict(data=markdown2.markdown(data))    
+  
 
 # Builds an array of entries to pass to props
 def __getEntries():
