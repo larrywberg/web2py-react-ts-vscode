@@ -22,13 +22,11 @@ This is a **web2py** example application and **Visual Studio Code setup** that s
 
 - web2py: [https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip](https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip)
 
-
 ```
-3 Copy the reactAndWeb2py folder from this repo to the applications folder of your local copy of web2py
+3 Copy the reactAndWeb2py folder to the applications folder of your local copy of web2py
 ```
 
 - cp -r reactAndWeb2py web2py_src/applications/
-
 
 ```
 4 Open the Visual Studio Code code-workspace file in VS Code:
