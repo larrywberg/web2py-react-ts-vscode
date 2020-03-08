@@ -1,0 +1,11 @@
+{{extend 'layout.html'}}
+{{block header}}
+
+{{end}}
+<div style="text-align: center;">
+    Build output from npm run-script dev
+</div>
+<br></br>
+<div style="white-space:pre=wrap">
+    {{=XML(buildOutput)}}
+</div>

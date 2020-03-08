@@ -1,0 +1,44 @@
+/* Used in display_form example */
+.inputName {
+    color: green;
+}
+
+
+/* Some customizations of web2py styles just because */
+.web2py_console {
+    text-align: center ;
+}
+
+.form-control-label {
+    color: darkorange;
+}
+
+.web2py_grid tbody td {
+    padding: 0;
+}
+
+.web2py_grid .row_buttons {
+    text-align: right;
+}
+
+.with_id {
+    text-align: center;
+}
+
+.w2p_export_menu {
+    text-align: center;
+}
+
+.web2py_table {
+    padding-bottom: 24px;
+}
+
+.main-container {
+    padding-left:40px;
+    padding-right:40px;
+}
+
+.readmeDiv {
+    padding-left:80px;
+    padding-right:80px;
+}

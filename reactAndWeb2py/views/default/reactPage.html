@@ -1,0 +1,28 @@
+{{extend 'layout.html'}}
+{{block header}}
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+{{end}}
+
+<div style="text-align: center;">
+    Web2py controller/view with React and Typescript.
+</div>
+
+<div id="reactRoot">
+    You can put loading ui here...
+    {{#    This div will be replaced by the react App loaded by the designated bundle.js }}
+</div>
+<br></br>
+
+
+<script>
+    {{#   Attach a serialized version of the props (sent from controller) to the javascript window. }}
+    {{#   React App can use it if desired }}
+    window.props = {{ =XML(props)}};
+    window.reactRoot = document.getElementById('reactRoot');
+</script>
+
+{{block page_js}}
+    <script src="{{=URL('static', reactBundle)}}"></script>
+    {{super}}
+{{end}}

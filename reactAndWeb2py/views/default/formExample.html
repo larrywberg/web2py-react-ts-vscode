@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+
+<h2>Input form</h2>
+<form enctype="multipart/form-data"
+    action="{{=URL()}}" method="post">
+    <span  class="inputName">Your name: </span>
+    <input name="name"/>
+    <input type="submit" />
+</form>
+<br><br>
+<h2>Submitted variables</h2>
+{{=BEAUTIFY(request.vars)}}

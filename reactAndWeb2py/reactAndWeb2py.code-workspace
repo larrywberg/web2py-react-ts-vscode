@@ -1,0 +1,50 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/__init__.py": true,
+			"**/*.pyc": true,
+			"**/dist/": true,
+			"**/node_modules/": true,
+			"ABOUT": true,
+			"anyserver.py": true,
+			"applications/": true,
+			"appveyor.yml": true,
+			"CHANGELOG": true,
+			"cron": true,
+			"databases": true,
+			"deposit/": true,
+			"docker/": true,
+			"docs/": true,
+			"errors": true,
+			"examples/": true,
+			"extras/": true,
+			"fabfile.py": true,
+			"handlers/": true,
+			"httpserver.*": true,
+			"languages": true,
+			"LICENSE": true,
+			"logs/": true,
+			"Makefile": true,
+			"MANIFEST.in": true,
+			"parameters_*.py": true,
+			"scripts/": true,
+			"sessions": true,
+			"setup.py": true,
+			"site-packages/": true,
+			"tmp/": true,
+			"tox.ini": true,
+			"uploads": true,
+			"VERSION": true,
+			"welcome.w2p": true
+		}
+	}
+
+}

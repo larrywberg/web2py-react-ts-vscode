@@ -1,0 +1,48 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Webpack dev",
+            "type": "npm",
+            "script": "dev",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Build Webpack",
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Start Live Typescript Session",
+            "type": "npm",
+            "script": "start",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Watch Typescript",
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Install Node Modules",
+            "type": "npm",
+            "script": "install",
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

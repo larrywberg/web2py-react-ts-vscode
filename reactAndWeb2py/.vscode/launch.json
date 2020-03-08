@@ -1,0 +1,33 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Web2py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/../../web2py.py",
+            // "args": [
+            //     "-a",
+            //     "yourweb2pyserverpassword"
+            // ],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        },
+        {
+            "name": "View webpack static server",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:8000/reactAndWeb2py/static/preview.html",
+            "webRoot": "${workspaceFolder}/static"
+        }
+    ]
+}

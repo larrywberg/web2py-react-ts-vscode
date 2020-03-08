@@ -1,0 +1,2 @@
+This is a standalone example project using a web2py python server with a react, typescript, webpack, buildable client which can all be launched from Visual Studio Code with included workspace. Launch tasks and npm tasks ready to run from fully debuggable setup.
+Developed with web2py.
