@@ -6,48 +6,55 @@ This is a **web2py** example application and **Visual Studio Code setup** that s
 ## Quickstart:
 
 ```
-1 Install python3, node, npm, Visual Studio Code. Use Chrome as your browser.  
+1. Install python3, node, npm, Visual Studio Code. Use Chrome as your browser.  
 ```
 
 - node: [https://nodejs.org/en/](https://nodejs.org/en/)
 - python: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 - Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-- Install VSCode extensions for python and typescript.  
+- Install VSCode extensions for python and typescript and Chrome Debugger.  
 - Select a recent Python 3 version as the default python for VS Code  
   
 
 ```
-2 Download a source archive of web2py and unzip it locally:
+2. Download a source archive of web2py and unzip it locally:
 ```
 
 - web2py: [https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip](https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip)
 
 ```
-3 Copy the reactAndWeb2py folder to the applications folder of your local copy of web2py
+3. Copy the reactAndWeb2py folder to the applications folder of your local copy of web2py
 ```
 
 - cp -r reactAndWeb2py web2py_src/applications/
 
 ```
-4 Open the Visual Studio Code code-workspace file in VS Code:
+3.5 optionally set the default route to this application by changing routes.py
+    to contain the line below:
+```
+
+- default_application = "reactAndWeb2py"
+
+```
+4. Open the Visual Studio Code code-workspace file in VS Code:
 ```
 
 - cd web2py_src/applications/reactAndWeb2py  
 - code reactAndWeb2py.code-workspace
 
 ```
-5 Install the node modules needed for this project.  
+5. Install the node modules needed for this project.  
 ```
 
 There are two ways to do this:  
 
-- run the "Install Node Modules" task (Terminal>Run Task...),  
+- run the pre-configured "Install Node Modules" task (Terminal>Run Task...),  
 or:    
-- run "npm install" in the reactAndWeb2py folder  
+- run "npm install" in the reactAndWeb2py folder in the VSCode terminal or in a shell window
   
 
 ```
-6 Launch the web2py server using the pre-configured VS Code launch task  
+6. Launch the web2py server using the pre-configured VS Code launch task  
 ```
 
 - Go to the "Run and Debug" tab in VS Code.
@@ -56,19 +63,29 @@ or:
 - Type a password that you will use to get to the admin panel
 
 ```
-7 Log in to the chrome window that has launched  
+7. Log in to the chrome window that has launched  
 ```
 
+- If you didn't set the default route you will be running some other web2py application.  
+  If so navigate  to  [http://127.0.0.1:8000/reactAndWeb2py/default/user/login](http://127.0.0.1:8000/reactAndWeb2py/default/user/login)
+- Use this login to have the admin menu:
 - Username:  admin@example.com  
 - password:  **password**  
 
 ```
-8 You are up and running  
+8. You are already debugging the python server.  
+  If you want to debug the javascript as well:
+```
+
+- run the "Launch and Debug ..." task.
+
+```
+9. You are up and running
 ```
 
 - Choose the react example from the top menu
-- ***The admin interface for web2py will be at: [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) ***
-***Use the password you entered earlier**
+- You should also log in to the web2py admin panel so that you can edit the application in its entirety in web2py. Use the password you set when you launched the web2py window. 
+- <a href="http://127.0.0.1:8000/admin" target="_blank">web2py admin</a>
 - The react source code is in the ***static/src/*** folder
 - The react application can be edited at: [http://127.0.0.1:8000/admin/default/design/reactAndWeb2py](http://127.0.0.1:8000/admin/default/design/reactAndWeb2py)
 - Examine the ***prebuilt launch tasks and npm scripts*** in the Visual Studio Code project.
