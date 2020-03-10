@@ -15,6 +15,8 @@ def index():
 #     http://127.0.0.1:8000/reactAndWeb2py/api/v1/entries/1883.xml
 @request.restful()
 def v1():
+    # Let's allow it to be used cross origin for our testing
+    response.headers["Access-Control-Allow-Origin"] = '*'
 
     def GET(tablename, id):
         if request.extension == 'xml':
@@ -27,7 +29,7 @@ def v1():
             raise HTTP(400)
 
     def GET_entries(id):
-        return dict(places = db.entries(id))
+        return dict(entries = db.entries(id))
 
     def POST(tablename, **fields):
         # response.view = 'generic.json'

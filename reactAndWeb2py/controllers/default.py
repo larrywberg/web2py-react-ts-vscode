@@ -11,8 +11,7 @@ from gluon.contrib.markdown import markdown2
 # ---- index page. Ask the user to login.  If logged in, show the reactPage ----
 def index():
     if auth.is_logged_in():
-        response.view='default/readme.html'
-        return readme()
+        return reactExample()
     else:
         redirect(URL("user"))
 
@@ -30,7 +29,7 @@ def reactExample():
         "first_name": auth.user.first_name, 
         "last_name": auth.user.last_name,
         "email": auth.user.email,
-        "entries": __getEntries()
+        # "entries": __getEntries()
     }
     return dict(props=props, reactBundle="bundle.js")
     

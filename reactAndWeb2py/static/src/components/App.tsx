@@ -2,15 +2,20 @@ import React from 'react'
 import { useContext, createContext } from 'react'
 import '../styles/index.css'
 import {  initializeAppState } from '../statemanagement/appState'
+import IncDecWidget from './IncDecWidget'
+import ApiTest from './ApiTest'
 
 declare const window: any
 
-// Use a context to pass down the state and actions to all
+// Use a context to pass down the state and actions list to all
 // sub components
 const AppContext = createContext({})
 
-// Sub-components can use this function to 
-// get the state and actions from the context
+// Sub-components can use getAppState() to 
+// get the state and actions from the context like this:
+//     import { getAppState } from './App'
+//     const {state, actions} = getAppState()
+//
 export const getAppState: any = () => {
     return useContext(AppContext)
 }
@@ -24,16 +29,24 @@ const App = () => {
 			<div>
 				<div className="helloReact">
 					<h1>Hello React and Typescript!</h1>
+					<div className="flexRowContainer">
+					React and Typescript source files are located in static/src
+					</div>
+				</div>
+				<div className="flexRowContainer topMargin30">
+					Two React components sharing state with React Hooks for state management:
 				</div>
 				<div className="flexRowContainer">
-					Two React components sharing state with hooks:
-				</div>
-				<div className="flexRowContainer">
-					<Widget />				
+					<IncDecWidget />				
 				</div>				
 				<div className="flexRowContainer">
-					<Widget />				
+					<IncDecWidget />				
 				</div>
+				<div className="flexRowContainer" >
+					<div className="topMargin30 botMargin20">
+						window.props is passed down from the web2py python controller
+					</div>
+				</div>				
 				<div className="flexRowContainer">
 					<div className="propsOutput">
 						<span>
@@ -44,24 +57,15 @@ const App = () => {
 						}</pre>
 					</div>
 				</div>
+				<div className="flexRowContainer">
+					<ApiTest />				
+				</div>
+				<div>
+					
+				</div>
 			</div>
 	  </AppContext.Provider>
 	)
   }
-
-const Widget = () => {
-	// getAppState gets the state and actions stored on the context in the markup
-	const {state, actions} = getAppState()
-
-	return (
-		<div className="widget">
-			<button className="button btn btn-default" onClick={actions.decrement}> - </button>
-			<div className="counter">
-				{state.count}
-			</div>
-			<button className="button btn btn-default" onClick={actions.increment}> + </button>
-		</div>
-	)
-}
 
 export default App

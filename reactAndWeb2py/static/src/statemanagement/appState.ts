@@ -1,16 +1,20 @@
 import { useState, useMemo, } from 'react'
 
 const initializeAppState = () => {
-    // HERE IS WHERE YOU DEFINE YOUR STATE VARIABLES
     const initialState = { 
-        count: 0 
+        // HERE IS WHERE YOU DEFINE YOUR STATE VARIABLES
+        count: 0,
+
+        // The api component pieces use these to load json from a RESTful service
+        apiTest_entryNext: 1,
+        apiTest_entryText: 'Click the button above to load first entry using REST call to web2py server',
     }
   
-    // Manage the state using React.useState()
+    // Build the state from the initialState using React.useState()
     const [state, setState] = useState(initialState)
   
-    // Build our actions. useMemo() as an optimization to
-    // make sure this will only ever be called once.
+    // Build our dictionary of action functions giving it the setState method to use in those methods. 
+    // useMemo() ensures this will only get called once
     const actions = useMemo(() => getActions(setState), [setState])
   
     return { state, actions }
@@ -24,6 +28,15 @@ const getActions = (setState:any) => {
         },
         decrement: () => {
             setState((state:any) => ({ ...state, count: state.count - 1 }))
+        },
+        setEntryText: (text: string) => {
+            setState((state:any) => ({ ...state, apiTest_entryText: text }))
+        },
+        setEntryNext: (id: number) => {
+            if (id > 3) {
+                id = 1
+            }
+            setState((state:any) => ({ ...state, apiTest_entryNext: id }))
         }
     })
 }

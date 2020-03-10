@@ -21,10 +21,11 @@ if not configuration.get('app.production'):
       response.menu += [
          (T('Admin'), False, '',
             [
-               (T('Panel'), False, URL('admin', 'default', 'design')+'/reactAndWeb2py'),
-               (T('Manage Users'), False, URL('appadmin', 'manage')+'/auth'),
-               (T('Install npm modules'), False, URL('dev', 'npminstall')),
-               (T('Compile Typescript/React: npm run-script dev'), False, URL('dev', 'builddev'))
+               (T('This App Panel'), False, URL('admin', 'default', 'design')+'/'+request.application),
+               (T('Web2py Admin Panel'), False, URL('admin', 'default', 'site')),
+               (  '------------------', False, ''),
+               (T('Compile Typescript/React: npm run-script dev'), False, URL('dev', 'builddev')),
+               (T('Install npm modules'), False, URL('dev', 'npminstall'))
             ]
          )
       ]

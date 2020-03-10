@@ -97,7 +97,7 @@
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "h1 {\n    color: #292727;\n\ttext-align: center;\n}\n\n.helloReact {\n    margin-top: 20px;\n    margin-left: 40px;\n    margin-right: 40px;\n    padding: 20px;\n    background-color: rgb(212, 212, 233);\n    border-radius: 6px;\n}\n\n.counter {    \n    min-width: 20px;\n    min-height: 30px;\n    width: 20px;\n    display: inline-block;\n    border-radius: 20px;\n}\n\n.widget {\n    text-align: center;    \n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n.button {\n    text-align: center;\n    width: 100px;\n    background-color: lightskyblue;\n    border-radius: 12px;\n    margin: 10px;\n}\n\n.btn:focus {\n    outline: none;\n}\n\n.flexRowContainer {\n    display: flex; \n    flex-direction: row;\n    justify-content: center;\n  }\n\n  .propsOutput {\n      padding-left:10px;\n      padding-top:20px;\n      max-width:600px;\n      background-color: aliceblue;\n      \n  }", ""]);
+exports.push([module.i, "h1 {\n    color: #292727;\n\ttext-align: center;\n}\n\n.helloReact {\n    margin-top: 20px;\n    margin-left: 40px;\n    margin-right: 40px;\n    padding: 20px;\n    background-color: rgb(212, 212, 233);\n    border-radius: 6px;\n}\n\n.counter {    \n    min-width: 20px;\n    min-height: 30px;\n    width: 20px;\n    display: inline-block;\n    border-radius: 20px;\n}\n\n.widget {\n    text-align: center;    \n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n\n.widget {\n    text-align: center;    \n    margin-left: 20px;\n    margin-right: 20px;\n}\n\n\n.button {\n    text-align: center;\n    min-width: 100px;\n    background-color: lightskyblue;\n    border-radius: 12px;\n    margin: 10px;\n}\n\n.btn:focus {\n    outline: none;\n}\n\n.flexRowContainer {\n    display: flex; \n    flex-direction: row;\n    justify-content: center;\n  }\n\n  .propsOutput {\n      padding-left:10px;\n      padding-top:20px;\n      max-width:700px;\n      background-color: aliceblue;\n      border-radius: 4px;\n  }\n\n  .apitest {\n      margin-top:40px;\n  }\n\n  .topMargin30 {\n      margin-top:30px;\n  }\n  .botMargin20 {\n    margin-bottom:20px;\n}", ""]);
 // Exports
 module.exports = exports;
 
@@ -32315,6 +32315,59 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./static/src/components/ApiTest.tsx":
+/*!*******************************************!*\
+  !*** ./static/src/components/ApiTest.tsx ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.css */ "./static/src/styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./static/src/components/App.tsx");
+
+
+
+
+var ApiTest = function ApiTest() {
+  // getAppState gets the state and dictionary of actions stored on the context
+  var _getAppState = Object(_App__WEBPACK_IMPORTED_MODULE_2__["getAppState"])(),
+      state = _getAppState.state,
+      actions = _getAppState.actions;
+
+  var doGetEntryJSON = function doGetEntryJSON() {
+    // Call the REST API provided by the web2py server
+    var baseUrl = "/reactAndWeb2py/api/v1/entries/";
+    var fetchUrl = baseUrl + state.apiTest_entryNext + ".json";
+    fetch(fetchUrl).then(function (res) {
+      return res.json();
+    }).then(function (result) {
+      actions.setEntryText(JSON.stringify(result.entries, null, 2));
+      actions.setEntryNext(state.apiTest_entryNext + 1);
+    }, function (error) {});
+  };
+
+  var entryText = state.apiTest_entryText;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "apitest"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flexRowContainer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    className: "button btn btn-default",
+    onClick: doGetEntryJSON
+  }, "Fetch Entry ", state.apiTest_entryNext)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "propsOutput"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, entryText)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ApiTest);
+
+/***/ }),
+
 /***/ "./static/src/components/App.tsx":
 /*!***************************************!*\
   !*** ./static/src/components/App.tsx ***!
@@ -32330,14 +32383,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.css */ "./static/src/styles/index.css");
 /* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _statemanagement_appState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../statemanagement/appState */ "./static/src/statemanagement/appState.ts");
+/* harmony import */ var _IncDecWidget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IncDecWidget */ "./static/src/components/IncDecWidget.tsx");
+/* harmony import */ var _ApiTest__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ApiTest */ "./static/src/components/ApiTest.tsx");
 
 
 
 
-// Use a context to pass down the state and actions to all
+
+
+// Use a context to pass down the state and actions list to all
 // sub components
-var AppContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({}); // Sub-components can use this function to 
-// get the state and actions from the context
+var AppContext = Object(react__WEBPACK_IMPORTED_MODULE_0__["createContext"])({}); // Sub-components can use getAppState() to 
+// get the state and actions from the context like this:
+//     import { getAppState } from './App'
+//     const {state, actions} = getAppState()
+//
 
 var getAppState = function getAppState() {
   return Object(react__WEBPACK_IMPORTED_MODULE_0__["useContext"])(AppContext);
@@ -32356,22 +32416,52 @@ var App = function App() {
     }
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "helloReact"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello React and Typescript!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello React and Typescript!"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flexRowContainer"
-  }, "Two React components sharing state with hooks:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "React and Typescript source files are located in static/src")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flexRowContainer topMargin30"
+  }, "Two React components sharing state with React Hooks for state management:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flexRowContainer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Widget, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IncDecWidget__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flexRowContainer"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Widget, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IncDecWidget__WEBPACK_IMPORTED_MODULE_3__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flexRowContainer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "topMargin30 botMargin20"
+  }, "window.props is passed down from the web2py python controller")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "flexRowContainer"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "propsOutput"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "window.props:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, JSON.stringify(window.props, null, 2))))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, "window.props:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, JSON.stringify(window.props, null, 2)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flexRowContainer"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ApiTest__WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)));
 };
 
-var Widget = function Widget() {
+/* harmony default export */ __webpack_exports__["default"] = (App);
+
+/***/ }),
+
+/***/ "./static/src/components/IncDecWidget.tsx":
+/*!************************************************!*\
+  !*** ./static/src/components/IncDecWidget.tsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.css */ "./static/src/styles/index.css");
+/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_index_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./static/src/components/App.tsx");
+
+
+ // declare const window: any
+
+var IncDecWidget = function IncDecWidget() {
   // getAppState gets the state and actions stored on the context in the markup
-  var _getAppState = getAppState(),
+  var _getAppState = Object(_App__WEBPACK_IMPORTED_MODULE_2__["getAppState"])(),
       state = _getAppState.state,
       actions = _getAppState.actions;
 
@@ -32388,7 +32478,7 @@ var Widget = function Widget() {
   }, " + "));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (App);
+/* harmony default export */ __webpack_exports__["default"] = (IncDecWidget);
 
 /***/ }),
 
@@ -32444,16 +32534,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var initializeAppState = function initializeAppState() {
-  // HERE IS WHERE YOU DEFINE YOUR STATE VARIABLES
   var initialState = {
-    count: 0
-  }; // Manage the state using React.useState()
+    // HERE IS WHERE YOU DEFINE YOUR STATE VARIABLES
+    count: 0,
+    // The api component pieces use these to load json from a RESTful service
+    apiTest_entryNext: 1,
+    apiTest_entryText: 'Click the button above to load first entry using REST call to web2py server'
+  }; // Build the state from the initialState using React.useState()
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initialState),
       _useState2 = _slicedToArray(_useState, 2),
       state = _useState2[0],
-      setState = _useState2[1]; // Build our actions. useMemo() as an optimization to
-  // make sure this will only ever be called once.
+      setState = _useState2[1]; // Build our dictionary of action functions giving it the setState method to use in those methods. 
+  // useMemo() ensures this will only get called once
 
 
   var actions = Object(react__WEBPACK_IMPORTED_MODULE_0__["useMemo"])(function () {
@@ -32479,6 +32572,24 @@ var getActions = function getActions(setState) {
       setState(function (state) {
         return _objectSpread({}, state, {
           count: state.count - 1
+        });
+      });
+    },
+    setEntryText: function setEntryText(text) {
+      setState(function (state) {
+        return _objectSpread({}, state, {
+          apiTest_entryText: text
+        });
+      });
+    },
+    setEntryNext: function setEntryNext(id) {
+      if (id > 3) {
+        id = 1;
+      }
+
+      setState(function (state) {
+        return _objectSpread({}, state, {
+          apiTest_entryNext: id
         });
       });
     }

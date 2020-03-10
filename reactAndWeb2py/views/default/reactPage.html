@@ -1,12 +1,9 @@
 {{extend 'layout.html'}}
 {{block header}}
-<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-<META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
 {{end}}
-
-<div style="text-align: center;">
-    Web2py controller/view with React and Typescript.
-</div>
 
 <div id="reactRoot">
     You can put loading ui here...
@@ -18,6 +15,7 @@
 <script>
     {{#   Attach a serialized version of the props (sent from controller) to the javascript window. }}
     {{#   React App can use it if desired }}
+    {{#   Note: copied this approach from https://github.com/jredrejo/web2pyreactpoc}}
     window.props = {{ =XML(props)}};
     window.reactRoot = document.getElementById('reactRoot');
 </script>
