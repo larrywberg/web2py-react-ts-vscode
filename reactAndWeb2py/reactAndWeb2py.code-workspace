@@ -1,10 +1,22 @@
 {
 	"folders": [
 		{
+			"path": "static/reactsource"
+		},
+		{
 			"path": "."
 		},
 		{
 			"path": "../.."
+		},
+		{
+			"path": "models"
+		},
+		{
+			"path": "views"
+		},
+		{
+			"path": "controllers"
 		}
 	],
 	"settings": {
@@ -44,7 +56,13 @@
 			"uploads": true,
 			"VERSION": true,
 			"welcome.w2p": true
-		}
+		},
+		"python.linting.banditArgs": [
+			"auth"
+		],
+		"python.linting.pylintArgs": [
+			"--disable=all"
+		]
 	}
 
 }

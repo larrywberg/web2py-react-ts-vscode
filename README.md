@@ -86,7 +86,7 @@ or:
 - Choose the react example from the top menu
 - You should also log in to the web2py admin panel so that you can edit the application in its entirety in web2py. Use the password you set when you launched the web2py window. 
 - <a href="http://127.0.0.1:8000/admin" target="_blank">web2py admin</a>
-- The react source code is in the ***static/src/*** folder
+- The react source code is in the ***static/reactsrc/*** folder
 - The react application can be edited at: [http://127.0.0.1:8000/admin/default/design/reactAndWeb2py](http://127.0.0.1:8000/admin/default/design/reactAndWeb2py)
 - Examine the ***prebuilt launch tasks and npm scripts*** in the Visual Studio Code project.
     - One Launch configuration will allow you to attach to a chrome window from VSCode
@@ -105,4 +105,4 @@ changing the exclude settings of the workspace in VS Code
 
 Before packing up the web2py application to move to a server it would be wise to delete the node_modules folder (I don't know how to tell web2py not to pack everything)  
 
-For real deployment you would want to remove the static/src folder.  It's needed for debugging as it contains the source and map files.  
+For real deployment you would want to remove the static/reactsrc folder.  It's needed for debugging as it contains the source and map files.  

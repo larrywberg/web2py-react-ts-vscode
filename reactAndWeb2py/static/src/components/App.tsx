@@ -30,7 +30,7 @@ const App = () => {
 				<div className="helloReact">
 					<h1>Hello React and Typescript!</h1>
 					<div className="flexRowContainer">
-					React and Typescript source files are located in static/src
+					React and Typescript source files are located in static/reactsrc
 					</div>
 				</div>
 				<div className="flexRowContainer topMargin30">

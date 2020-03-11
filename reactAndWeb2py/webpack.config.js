@@ -6,9 +6,9 @@ module.exports = {
   // Evaluate source maps
   devtool: 'source-map',
 
-  // webpack will take the files from ./static/src/index
+  // webpack will take the files from ./static/reactsrc/index
   entry: {
-    app: './static/src/index.tsx'
+    app: './static/reactsrc/index.tsx'
   },
 
   // and output it into /dist as bundle.js

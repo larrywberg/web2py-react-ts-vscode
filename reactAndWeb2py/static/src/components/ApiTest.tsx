@@ -6,10 +6,11 @@ const ApiTest = () => {
 	// getAppState gets the state and dictionary of actions stored on the context
     const {state, actions} = getAppState()
     
-    const doGetEntryJSON = () => {
+    const callGetEntryAPI = () => {
 		// Call the REST API provided by the web2py server
-		const baseUrl = "/reactAndWeb2py/api/v1/entries/"
+		const baseUrl = "http://127.0.0.1:8000/reactAndWeb2py/api/v1/entries/"
 		let fetchUrl = baseUrl + state.apiTest_entryNext + ".json"
+		
 		fetch(fetchUrl)
 		.then(res => res.json())
 		.then(
@@ -18,6 +19,7 @@ const ApiTest = () => {
 			actions.setEntryNext(state.apiTest_entryNext+1)
 		  },
 		  (error) => {
+			  console.log(error)
 		  }
 		)
 
@@ -27,7 +29,7 @@ const ApiTest = () => {
 	return (
 		<div className="apitest">
 			<div className="flexRowContainer">
-				<button className="button btn btn-default" onClick={doGetEntryJSON} >
+				<button className="button btn btn-default" onClick={callGetEntryAPI} >
 					Fetch Entry {state.apiTest_entryNext}
 				</button>
 			</div>
