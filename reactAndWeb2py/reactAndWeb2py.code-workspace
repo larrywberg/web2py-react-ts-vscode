@@ -4,12 +4,6 @@
 			"path": "static/reactsource"
 		},
 		{
-			"path": "."
-		},
-		{
-			"path": "../.."
-		},
-		{
 			"path": "models"
 		},
 		{
@@ -17,7 +11,14 @@
 		},
 		{
 			"path": "controllers"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../.."
 		}
+
 	],
 	"settings": {
 		"files.exclude": {
