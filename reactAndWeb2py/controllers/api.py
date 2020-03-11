@@ -1,5 +1,4 @@
 import requests
-# import urllib
 
 # -*- coding: utf-8 -*-
 # try something like

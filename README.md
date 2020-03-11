@@ -14,36 +14,41 @@ This is a **web2py** example application and **Visual Studio Code setup** that s
 - Visual Studio Code: [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
 - Install VSCode extensions for python and typescript and Chrome Debugger.  
 - Select a recent Python 3 version as the default python for VS Code  
-  
 
 ```
-2. Download a source archive of web2py and unzip it locally:
+2. Install python requests library (used by some of the contollers in this sample app)
+```
+
+- pip3 install requests
+
+```
+3. Download a source archive of web2py and unzip it locally:
 ```
 
 - web2py: [https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip](https://mdipierro.pythonanywhere.com/examples/static/web2py_src.zip)
 
 ```
-3. Copy the reactAndWeb2py folder to the applications folder of your local copy of web2py
+4. Copy the reactAndWeb2py folder inside the download you got from this github repo to the applications folder of your local copy of web2py
 ```
 
 - cp -r reactAndWeb2py web2py_src/applications/
 
 ```
-3.5 optionally set the default route to this application by changing routes.py
+4.5 optionally set the default route to this application by changing routes.py
     to contain the line below:
 ```
 
 - default_application = "reactAndWeb2py"
 
 ```
-4. Open the Visual Studio Code code-workspace file in VS Code:
+5. Open the Visual Studio Code code-workspace file in VS Code:
 ```
 
 - cd web2py_src/applications/reactAndWeb2py  
 - code reactAndWeb2py.code-workspace
 
 ```
-5. Install the node modules needed for this project.  
+6. Install the node modules needed for this project.  
 ```
 
 There are two ways to do this:  
@@ -54,7 +59,7 @@ or:
   
 
 ```
-6. Launch the web2py server using the pre-configured VS Code launch task  
+7. Launch the web2py server using the pre-configured VS Code launch task  
 ```
 
 - Go to the "Run and Debug" tab in VS Code.
@@ -63,7 +68,7 @@ or:
 - Type a password that you will use to get to the admin panel
 
 ```
-7. Log in to the chrome window that has launched  
+8. Log in to the chrome window that has launched  
 ```
 
 - If you didn't set the default route you will be running some other web2py application.  
@@ -73,14 +78,14 @@ or:
 - password:  **password**  
 
 ```
-8. You are already debugging the python server.  
+9. You are already debugging the python server.  
   If you want to debug the javascript as well:
 ```
 
 - run the "Launch and Debug ..." task.
 
 ```
-9. You are up and running
+10. You are up and running
 ```
 
 - Choose the react example from the top menu

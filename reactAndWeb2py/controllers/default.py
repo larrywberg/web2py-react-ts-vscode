@@ -1,4 +1,3 @@
-import requests
 import urllib
 from gluon.contrib.markdown import markdown2
 
