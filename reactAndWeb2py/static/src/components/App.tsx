@@ -5,20 +5,27 @@ import {  initializeAppState } from '../statemanagement/appState'
 import IncDecWidget from './IncDecWidget'
 import ApiTest from './ApiTest'
 
+// We get the props passed in from the server view script on the window object
 declare const window: any
 
+//------------------------------------------
 // Use a context to pass down the state and actions list to all
 // sub components
+//------------------------------------------
 const AppContext = createContext({})
 
-// Sub-components can use getAppState() to 
-// get the state and actions from the context like this:
+//------------------------------------------
+// Sub-components use getAppState() to
+// get the state and actions from the context.
+//
 //     import { getAppState } from './App'
 //     const {state, actions} = getAppState()
 //
+//------------------------------------------
 export const getAppState: any = () => {
     return useContext(AppContext)
 }
+
 
 const App = () => {
 	// Use react hooks to initialize our state and actions
@@ -37,16 +44,16 @@ const App = () => {
 					Two React components sharing state with React Hooks for state management:
 				</div>
 				<div className="flexRowContainer">
-					<IncDecWidget />				
-				</div>				
+					<IncDecWidget />
+				</div>
 				<div className="flexRowContainer">
-					<IncDecWidget />				
+					<IncDecWidget />
 				</div>
 				<div className="flexRowContainer" >
 					<div className="topMargin30 botMargin20">
 						window.props is passed down from the web2py python controller
 					</div>
-				</div>				
+				</div>
 				<div className="flexRowContainer">
 					<div className="propsOutput">
 						<span>
@@ -58,10 +65,10 @@ const App = () => {
 					</div>
 				</div>
 				<div className="flexRowContainer">
-					<ApiTest />				
+					<ApiTest />
 				</div>
 				<div>
-					
+
 				</div>
 			</div>
 	  </AppContext.Provider>

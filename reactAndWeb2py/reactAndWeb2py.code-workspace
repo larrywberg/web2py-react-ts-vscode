@@ -13,6 +13,9 @@
 			"path": "controllers"
 		},
 		{
+			"path": "static/css"
+		},
+		{
 			"path": "."
 		},
 		{
