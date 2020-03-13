@@ -22,6 +22,7 @@ def readme():
   
 
 # Sample view that uses react
+@auth.requires_login()
 def reactExample():
     response.view='default/reactPage.html'
     props = {
@@ -45,6 +46,7 @@ def __getEntries():
         })
     return dict(entries=entries)
 
+@auth.requires_login()
 def gridExample():
     query = db.entries.userid == auth.user_id
     export_classes = dict(csv=True, json=True, html=False,
