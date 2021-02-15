@@ -66,7 +66,8 @@
 		],
 		"python.linting.pylintArgs": [
 			"--disable=all"
-		]
+		],
+		"git.ignoreLimitWarning": true
 	}
 
 }
